@@ -6,13 +6,15 @@ import java.io.IOException;
 
 @WebServlet(name = "PizzaOrderServlet", value = "/pizzaOrder")
 public class PizzaOrderServlet extends HttpServlet {
+    // GET METHOD //
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        // FORWARD TO THANK YOU PAGE
+        // FORWARD TO THANK YOU PAGE //
         request.getRequestDispatcher("/pizzaOrder.jsp").forward(request, response);
     }
 
+    // POST METHOD //
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // Retrieve form data
