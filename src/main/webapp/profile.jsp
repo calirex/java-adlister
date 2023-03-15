@@ -11,6 +11,9 @@
 
     <div class="container">
         <h1>Viewing your profile.</h1>
+        <form action="/LogOutServlet" method="POST">
+            <button id="logout">Logout</button>
+        </form>
     </div>
 
 </body>

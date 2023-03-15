@@ -17,8 +17,8 @@ request.getRequestDispatcher("/login.jsp").forward(request, response);
         boolean validAttempt = username.equals("admin") && password.equals("password");
 
         if (validAttempt) {
-//            make http session
-//            store user cookie
+//            MAKE HTTP SESSION //
+//            STORE USER COOKIES //
             response.sendRedirect("/profile");
         } else {
             response.sendRedirect("/login");
