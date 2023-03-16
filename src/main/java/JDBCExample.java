@@ -14,7 +14,7 @@ public class JDBCExample {
 
             // make the connection
             Connection connection = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/codeup_test_db?allowPublicKeyRetrieval=true&useSSL=false",
+                    "jdbc:mysql://localhost:3306/employees?allowPublicKeyRetrieval=true&useSSL=false",
                     "root",
                     "codeup"
             );
@@ -24,13 +24,14 @@ public class JDBCExample {
             Statement stmt = connection.createStatement();
 
             // run query with statement and parse result set
-            String query = "select * from albums;";
+            String query = "select * from employees;";
 
             ResultSet rs = stmt.executeQuery(query);
-
-            if (rs.next()){
-                System.out.println(rs.getString("artist"));
+            for (int i = 0; i < 10; i += 1) {
+                rs.next();
+                System.out.println(rs.getString("first_name"));
             }
+
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
